@@ -4,7 +4,7 @@ import hexColors
 class MenuScreen:
 
     def __createMenuScreen(self):
-        self.__menuScreen = ctk.CTkFrame(master=self.__root, fg_color=hexColors.BABY_BLUE)
+        self.__menuScreen = ctk.CTkFrame(master=self.__window, fg_color=hexColors.BABY_BLUE)
         self.__menuScreen.place(relwidth=1, relheight=1)
 
     def __createTitle(self):
@@ -16,24 +16,29 @@ class MenuScreen:
         self.__credit.pack()
 
     def __createStartButton(self):
-        self.__startButton = ctk.CTkButton(master=self.__menuScreen, text="START", command=self.startGame)
+        self.__startButton = ctk.CTkButton(master=self.__menuScreen, text="START", command=self.__startGame)
         self.__startButton.pack(pady=(20, 0))
 
     def __createQuitButton(self):
-        self.__quitButton = ctk.CTkButton(master=self.__menuScreen, text="QUIT", command=self.quitGame)
+        self.__quitButton = ctk.CTkButton(master=self.__menuScreen, text="QUIT", command=self.__quitGame)
         self.__quitButton.pack(pady=(5, 0))
 
-    def __init__(self, root):
-        self.__root = root
+    def __init__(self, window):
+        self.__window = window
+
+    def display(self):
         self.__createMenuScreen()
         self.__createTitle()
         self.__createCredit()
         self.__createStartButton()
         self.__createQuitButton()
 
-    def startGame(self):
+    def __startGame(self):
         print("Game started")
+        self.__menuScreen.destroy()
 
-    def quitGame(self):
+        
+
+    def __quitGame(self):
         print("Game ended")
-        self.__root.destroy()
+        self.__window.destroy()
