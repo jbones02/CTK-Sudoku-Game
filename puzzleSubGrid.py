@@ -1,11 +1,12 @@
 import customtkinter as ctk
 import hexColors as hex
 
-class BoardSubFrame():
+class PuzzleSubGrid():
     def __createTiles(self):
         for row in range(self.numRows):
             for col in range(self.numCols):
-                button = ctk.CTkButton(self.__boardSubFrame, command=print('press'))
+                #button = ctk.CTkButton(self.__boardSubFrame, command=print('press'))
+                button = ctk.CTkButton(self.__boardSubFrame)
                 button.grid(row=row, column=col, sticky='nsew')
                 self.__boardSubFrame.grid_columnconfigure(col, weight=1)
             self.__boardSubFrame.grid_rowconfigure(row, weight=1)

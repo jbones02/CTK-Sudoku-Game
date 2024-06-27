@@ -1,0 +1,21 @@
+1. get text from generated puzzle into the buttons of each subgrid
+
+2. make it so that buttons that were empty in the original puzzle can be clicked
+   and altered
+
+3. implement check function that sees if the board has been solved
+
+4. implement lives that decrease if player checks board and is wrong
+
+5. delete number in tiles that were entered incorrectly, but keep the number that
+   were entered correctly
+
+6. implement game over if lives are zero
+
+7. implement button to autosolve that visualized the backtracking algorithm
+
+8. implement button to return to the main menu
+
+9. implement button to quit the game
+
+10. decorate
